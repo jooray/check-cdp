@@ -2,6 +2,8 @@
 
 This script will check CDP(s) of [DAI stablecoin](https://makerdao.com/dai) for collateral requirements.
 
+The reason to use this instead of [cdp-keeper](https://github.com/makerdao/cdp-keeper) is for example when your CDPs are on a hardware wallet such as Trezor and you don't have access to private keys, but want to be notified if something happens. It would be wise to keep WARNRATIO at 200% or more.
+
 # Installation
 
 Clone and setup [pymaker](https://github.com/makerdao/pymaker) according to official instructions and copy the script to pymaker directory (if you don't want to install the module).
