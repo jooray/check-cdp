@@ -1,0 +1,14 @@
+#!/bin/bash
+
+cd ~/check-cdp/pymaker
+FOUND=`find ~/.dai-checker -mmin -120 -name dai-status -not -empty -print`
+if [ -z "$FOUND" ]
+  then # we don't have recent notification (120 minutes)
+    if python3 ./check-cdp.py -q -w 200 3200 > ~/.dai-checker/dai-status 2>&1
+    then # all CDPs are OK
+      rm -f ~/.dai-checker/dai-status
+    else # problematic recent CDPs
+      ( echo "Undercollateralized CDP warning" ; cat ~/.dai-checker/dai-status ) | \
+        signal-cli -u +1800123123 send +1800987654 # send Signal message from +1800123123 to +1800987654
+    fi
+  fi

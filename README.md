@@ -51,3 +51,12 @@ CDP #3200 is 334.91% which is less than 350.00%
 Everything is fine
 ```
 
+# dai checker script
+
+There is an example script in *dai-checker.sh.example*
+that sends notifications at most every two hours.
+
+We use signal as an example, using
+[signal-cli](https://github.com/AsamK/signal-cli), but you can use any
+other messenger or app that has a command line interface (like plain old
+e-mail).
