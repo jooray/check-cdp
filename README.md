@@ -29,21 +29,24 @@ The script returns 0 if all the CDPs meet the requirements, 1 (error) otherwise
 
 ```
 # python3 check-cdp.py -w 150 3200 3500
-  Deposited 26.087552656982794963 PETH
-  Debt 1000.000000000000000000 DAI
-  Current Ratio 3.475557176022628644000000000
+CDP #3200
+  Owner 0xF230213506F2e4eB53B902D613B98a0dBE7fB1Bc
+  Deposited 50.24188 PETH
+  Debt 1926.0 DAI
+  Current Ratio 334.91%
 CDP #3500
   Owner 0x571E524149ffC22615f49F0F785BB605dc50472b
-  Deposited 0.077705745309196834 PETH
-  Debt 0.000000000000000000 DAI
+  Deposited 0.077705745 PETH
+  Debt 0.0 DAI
 # python3 check-cdp.py -w 350 3200
+CDP #3200
   Owner 0xF230213506F2e4eB53B902D613B98a0dBE7fB1Bc
-  Deposited 26.087552656982794963 PETH
-  Debt 1000.000000000000000000 DAI
-  Current Ratio 3.475557176022628644000000000
-CDP #3200 is 3.475557176022628644000000000 which is below 3.500000000000000000000000000
+  Deposited 50.24188 PETH
+  Debt 1926.0 DAI
+  Current Ratio 334.91%
+CDP #3200 is 334.91% which is less than 350.00%
 # python3 check-cdp.py -w 350 -q 3200
-CDP #3200 is 3.475557176022628644000000000 which is below 3.500000000000000000000000000
+CDP #3200 is 334.91% which is less than 350.00%
 # python3 check-cdp.py -w 350 -q 3500 && echo Everything is fine
 Everything is fine
 ```
