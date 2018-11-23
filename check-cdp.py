@@ -30,15 +30,15 @@ for cup_id in args.cdps:
     if not args.quiet:
         print(f'CDP #{cup_id}')
         print(f'  Owner {cup.lad}')
-        print(f'  Deposited {cup.ink} PETH')
-        print(f'  Debt {tab} DAI')
+        print(f'  Deposited {float(cup.ink):.8} PETH')
+        print(f'  Debt {float(tab):.8} DAI')
     if tab > Wad(0):
         current_ratio = Ray(pro / tab)
         if not args.quiet:
-            print(f'  Current Ratio {current_ratio}')
+            print(f'  Current Ratio {float(current_ratio):.2%}')
         is_undercollateralized = (current_ratio < minimum_ratio)
         if is_undercollateralized:
-            print(f'CDP #{cup_id} is {current_ratio} which is below {minimum_ratio}')
+            print(f'CDP #{cup_id} is {float(current_ratio):.2%} which is less than {float(minimum_ratio):.2%}')
             requirements_satisfied=False
 
 if not requirements_satisfied:
